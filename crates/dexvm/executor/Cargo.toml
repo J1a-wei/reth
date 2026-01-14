@@ -1,0 +1,45 @@
+[package]
+name = "reth-dexvm-executor"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+
+[[example]]
+name = "simple_dex_node"
+path = "../examples/simple_dex_node.rs"
+
+[dependencies]
+# DexVM
+reth-dexvm-primitives = { path = "../primitives" }
+reth-dexvm-core = { path = "../core" }
+
+# Reth
+reth-primitives.workspace = true
+reth-execution-types.workspace = true
+reth-evm.workspace = true
+reth-storage-api.workspace = true
+alloy-primitives.workspace = true
+
+# Async
+tokio = { workspace = true, features = ["full"] }
+futures.workspace = true
+
+# Error handling
+thiserror.workspace = true
+
+# Tracing
+tracing.workspace = true
+
+# Metrics
+reth-metrics.workspace = true
+metrics = "0.24"
+
+[dev-dependencies]
+criterion = "0.5"
+tracing-subscriber = "0.3"
+
+[features]
+default = []

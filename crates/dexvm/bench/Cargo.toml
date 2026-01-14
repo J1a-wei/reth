@@ -1,0 +1,38 @@
+[package]
+name = "reth-dexvm-bench"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+
+[[bench]]
+name = "orderbook_bench"
+harness = false
+
+[[bench]]
+name = "full_system_bench"
+harness = false
+
+[dependencies]
+# DexVM
+reth-dexvm-primitives = { path = "../primitives" }
+reth-dexvm-core = { path = "../core" }
+reth-dexvm-executor = { path = "../executor" }
+
+# Reth
+reth-primitives.workspace = true
+alloy-primitives.workspace = true
+
+# Async
+tokio = { workspace = true, features = ["full"] }
+
+# Benchmarking
+criterion = { version = "0.5", features = ["html_reports", "async_tokio"] }
+
+# Utils
+rand = "0.8"
+
+[dev-dependencies]
+tracing-subscriber = "0.3"

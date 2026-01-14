@@ -2616,6 +2616,34 @@ dependencies = [
 ]
 
 [[package]]
+name = "criterion"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f2b12d017a929603d80db1831cd3a24082f8137ce19c69e6447f54f5fc8d692f"
+dependencies = [
+ "anes",
+ "cast",
+ "ciborium",
+ "clap",
+ "criterion-plot",
+ "futures",
+ "is-terminal",
+ "itertools 0.10.5",
+ "num-traits",
+ "once_cell",
+ "oorandom",
+ "plotters",
+ "rayon",
+ "regex",
+ "serde",
+ "serde_derive",
+ "serde_json",
+ "tinytemplate",
+ "tokio",
+ "walkdir",
+]
+
+[[package]]
 name = "criterion-plot"
 version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -8143,6 +8171,78 @@ dependencies = [
  "reth-codecs",
  "reth-primitives-traits",
  "serde",
+]
+
+[[package]]
+name = "reth-dexvm-bench"
+version = "1.9.3"
+dependencies = [
+ "alloy-primitives",
+ "criterion",
+ "rand 0.8.5",
+ "reth-dexvm-core",
+ "reth-dexvm-executor",
+ "reth-dexvm-primitives",
+ "reth-primitives",
+ "tokio",
+ "tracing-subscriber 0.3.22",
+]
+
+[[package]]
+name = "reth-dexvm-core"
+version = "1.9.3"
+dependencies = [
+ "alloy-primitives",
+ "criterion",
+ "dashmap 6.1.0",
+ "derive_more",
+ "metrics",
+ "parking_lot",
+ "proptest",
+ "reth-dexvm-primitives",
+ "reth-metrics",
+ "reth-primitives",
+ "serde",
+ "thiserror 2.0.17",
+ "tracing",
+]
+
+[[package]]
+name = "reth-dexvm-executor"
+version = "1.9.3"
+dependencies = [
+ "alloy-primitives",
+ "criterion",
+ "futures",
+ "metrics",
+ "reth-dexvm-core",
+ "reth-dexvm-primitives",
+ "reth-evm",
+ "reth-execution-types",
+ "reth-metrics",
+ "reth-primitives",
+ "reth-storage-api",
+ "thiserror 2.0.17",
+ "tokio",
+ "tracing",
+ "tracing-subscriber 0.3.22",
+]
+
+[[package]]
+name = "reth-dexvm-primitives"
+version = "1.9.3"
+dependencies = [
+ "alloy-primitives",
+ "alloy-rlp",
+ "bincode 1.3.3",
+ "bytes",
+ "criterion",
+ "derive_more",
+ "k256",
+ "reth-primitives",
+ "serde",
+ "sha2",
+ "thiserror 2.0.17",
 ]
 
 [[package]]
